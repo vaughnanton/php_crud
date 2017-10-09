@@ -24,7 +24,7 @@ if ( isset($_POST['name']) && isset($_POST['email'])
           ':n' => $_POST['name'],
           ':e' => $_POST['email'],
           ':p' => $_POST['password'],
-          ':id' => $_POST['user_id'])):
+          ':id' => $_POST['user_id']));
       $_SESSION['success'] = 'Record updated';
       header( 'Location: index.php' ) ;
       return;
@@ -44,7 +44,7 @@ if ( $row === false ) {
   header( 'Location: index.php' ) ;
   return
 }
-
+//takes the old values to put into submit form in HTML view below
 $n = htmlentities($row['name']);
 $e = htmlentities($row['email']);
 $p = htmlentities($row['password']);

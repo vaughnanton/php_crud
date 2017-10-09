@@ -7,6 +7,7 @@ session_start();
 <head></head>
 <body>
 <?php
+//implementing the flash pattern
 if ( isset($_SESSION['error']) ) {
   echo '<p style="color:red">'.$_SESSION['error']."</p>\n";
   unset($_SESSION['error']);

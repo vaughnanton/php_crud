@@ -7,6 +7,7 @@ if ( isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']
   //data validation
   if ( strlen($_POST['name']) < 1 || strlen($_POST['password']) <1) {
     $_SESSION['error'] = 'Missing data';
+    //redirect back to the script, gets the page back, with Missing data msg
     header("Location: add.php");
     return
   }
@@ -24,6 +25,7 @@ if ( isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']
     ':e' => $_POST['email'],
     ':p' => $_POST['password']));
     $_SESSION['success'] = 'Record added';
+    //redirect to index.php, gets page, with Record added msg
     header( 'Location: index.php' ) ;
     return;
 

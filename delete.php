@@ -20,13 +20,15 @@ if ( ! isset($_GET['user_id']) ) {
 
 $stmt = $pdo->prepare("SELECT name, user_id FROM users where user_id = :xyz");
 $stmt->execute(array(":xyz" => $_GET['user_id']));
+//if we don't get a row...
 if ( $row === false ) {
   $_SESSION['error'] = 'Bad value for user_id';
+  //redirect to index.php
   header( 'Location: index.php' ) ;
   return;
 }
 ?>
-
+<!--prevent injections with htmlentities-->
 <p>Confirm: Deleting <?= htmlentities($row['name']) ?></p>
 
 <form method="post">
