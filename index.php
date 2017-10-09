@@ -1,10 +1,8 @@
-//model
 <?php
 require_once "pdo.php";
 session_start();
 ?>
 
-//view
 <html>
 <head></head>
 <body>
