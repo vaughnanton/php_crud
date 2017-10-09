@@ -1,4 +1,4 @@
-A sample PHP application built with the following tech/methodologies:
+**A sample PHP application built with the following tech/methodologies:**
 
 
   * php
