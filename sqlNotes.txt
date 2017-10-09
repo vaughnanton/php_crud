@@ -1,0 +1,17 @@
+Getting started with the application,
+we need to run some SQL commands,
+either the the command line or phpMyAdmin:
+
+CREATE DATABASE misc;
+GRANT ALL ON misc.* TO 'Zack'@'localhost' IDENTIFIED BY 'OHNOapublicpassword';
+
+USE misc; (if at command line, or select misc through phpMyAdmin)
+
+CREATE TABLE users (
+    user_id INTEGER NOT NULL
+      AUTO_INCREMENT KEY,
+    name VARCHAR(128),
+    email VARCHAR(128),
+    password VARCHAR(128),
+    INDEX(email)
+) ENGINE=InnoDB CHARSET=utf8;
